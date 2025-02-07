@@ -27,6 +27,16 @@ public class BallMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        _rigidbody.MovePosition(_rigidbody.position + Direction * _speed);
+        if (Direction == Vector3.zero || _rigidbody.position.x < -20 || _rigidbody.position.x > 20
+            || _rigidbody.position.z > 15 || _rigidbody.position.z < -15)
+        {
+            Debug.Log("Ball went out of the map.");
+            GameManager.Instance.Scored(0);
+            Destroy(gameObject);
+        }
+        else
+        {
+            _rigidbody.MovePosition(_rigidbody.position + Direction * _speed);
+        }
     }
 }

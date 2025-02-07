@@ -30,8 +30,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _textMeshPro = GetComponent<TextMeshPro>();
-        Debug.Log("Welcome to Pong !\n        Up  -  Down");
-        Debug.Log("Left:   w   |   s\nRight:  ^   |   v");
+        Debug.Log("Welcome to Pong !\nKeys:  Up  -  Down");
+        Debug.Log("Left:  w   |   s\nRight:  ^   |   v");
         StartCoroutine(CreateNewBall());
     }
 
@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
             winningPlayer = "Right";
         }
         else {
+            StartCoroutine(CreateNewBall());
             return;
         }
 
@@ -57,7 +58,8 @@ public class GameManager : MonoBehaviour
         Debug.Log($"{winningPlayer} Player Scored !\nScore : {_score[0]} - {_score[1]}");
 
         if (_score[playerNumber - 1] > 10) {
-            Debug.Log($"Game Over, {winningPlayer} Player Wins !\nGame Starts Again !\nScore : 0 - 0");
+            Debug.Log($"Game Over !\n{winningPlayer} Player Wins !");
+            Debug.Log("Game Starts Again in 3 seconds !\nScore : 0 - 0");
             _textMeshPro.text = $"Score : 0 - 0";
             _score[0] = 0;
             _score[1] = 0;
@@ -69,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator CreateNewBall()
     {
-        Debug.Log($"Ball Spaws in {_waitTime} seconds.");
+        Debug.Log($"New Ball spaws in {_waitTime} seconds.");
         yield return new WaitForSeconds(_waitTime);
         Instantiate(_ball);
     }
