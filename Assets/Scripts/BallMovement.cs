@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speed = 15f;
     private Rigidbody _rigidbody;
 
     public Vector3 Direction { get; set; }
-    public float Speed { get => _speed; set => _speed = value; }
+    public float BonusSpeed { get; set; }
 
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
 
-        if (GameManager.Instance.StartingPlayer == 1) {
+        if (GameManager.Instance.NextPlayer == 1) {
             Direction = Vector3.left;
         }
-        else if (GameManager.Instance.StartingPlayer == 2) {
+        else if (GameManager.Instance.NextPlayer == 2) {
             Direction = Vector3.right;
         }
         else {
@@ -24,6 +24,7 @@ public class BallMovement : MonoBehaviour
             Direction = Vector3.zero;
         }
     }
+
 
     void FixedUpdate()
     {
@@ -34,9 +35,13 @@ public class BallMovement : MonoBehaviour
             GameManager.Instance.Scored(0);
             Destroy(gameObject);
         }
-        else
-        {
-            _rigidbody.MovePosition(_rigidbody.position + Direction * _speed);
+        else {
+            _rigidbody.velocity = Direction * (_speed + BonusSpeed);
         }
+    }
+
+
+    public void IncreaseSpeed(float factor) {
+        _speed += _speed * factor;
     }
 }

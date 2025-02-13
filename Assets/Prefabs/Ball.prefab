@@ -109,9 +109,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!135 &3231528362421738761
 SphereCollider:
@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9562edb154344e64cb9ce5131b6da8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.3
+  _speed: 15
