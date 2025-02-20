@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cee7017696f1764691f4e8221c4812b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 9b8f1462ef024294a9cba6bb1f7826c6, type: 3}
+  _audioClip: {fileID: 8300000, guid: 62e0c826da44db744a6fbbbd3b8760d4, type: 3}
   _playerNumber: 2
 --- !u!82 &915391379
 AudioSource:
@@ -2779,7 +2779,7 @@ MonoBehaviour:
   _paddleRight: {fileID: 919817229}
   _soloUI: {fileID: 639556538}
   _duelUI: {fileID: 2112247309}
-  _gamemode: Duel
+  _gamemode: Solo
   _soloLives: 5
   _scoreToWin: 11
   _ballAcceleration: 0.05
@@ -2814,7 +2814,7 @@ MonoBehaviour:
   _powerUps:
   - {fileID: 8228048283569839075, guid: 1d53d3d49bb599149be34115245b9390, type: 3}
   - {fileID: 7549084407612932351, guid: 8b6ba09752c4d5f489ea497d487cf3e1, type: 3}
-  _spawnRate: 12
+  _spawnRate: 8
   _xSpawnRange: 9
   _zSpawnRange: 5
 --- !u!1 &1508488286
@@ -3538,7 +3538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cee7017696f1764691f4e8221c4812b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 9b8f1462ef024294a9cba6bb1f7826c6, type: 3}
+  _audioClip: {fileID: 8300000, guid: 62e0c826da44db744a6fbbbd3b8760d4, type: 3}
   _playerNumber: 1
 --- !u!82 &2091475613
 AudioSource:

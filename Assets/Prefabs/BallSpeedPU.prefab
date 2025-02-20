@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _color: {r: 0, g: 1, b: 0, a: 0}
   _audioClip: {fileID: 8300000, guid: 48f42fa6d6cb0dc40aacf9551724f5e5, type: 3}
-  _durationTime: 10
+  _durationTime: 8
   _rotationSpeed: 200
   _bounceRange: 0.5
   _bouncingSpeed: 5
